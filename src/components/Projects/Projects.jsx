@@ -1,0 +1,49 @@
+import React from 'react';
+import ProjectItem from './ProjectItem';
+import './Projects.css';
+
+const Projects = () => {
+  const projectList = [
+    {
+      id: '01',
+      variant: 'immersive', // Full Width Hero Style
+      title: 'Precision-Engineered Dashboard',
+      subtitle: 'UX/UI Design & Frontend Implementation',
+      role: 'LEAD UX/UI DESIGNER',
+      tech: 'FIGMA, REACT, SCSS',
+      description: 'A study in solving complex data visualization problems for a premium automotive brand. The goal was to simplify a multi-layer information architecture into a single High-Fidelity experience that maintains 100% design integrity through a React implementation.'
+    }, // More projects will have similar structure
+    {
+      id: '02',
+      variant: 'asymmetrical-left', // Media Left, Text Right
+      title: 'Structural Design System',
+      subtitle: 'Architecting Scalability & Consistency',
+      role: 'DESIGN SYSTEMS LEAD',
+      tech: 'FIGMA, STORYBOOK, REACT',
+      description: 'Building a modular components library from the ground up, focusing on precision, accessibility, and designer-developer handoff. I designed the entire visual language and implementation logic to ensure a unified user experience.'
+    },
+    {
+      id: '03',
+      variant: 'asymmetrical-right', // Text Left, Media Right
+      title: 'Immersive Product Experience',
+      subtitle: 'E-commerce Redefinition',
+      role: 'UI DESIGNER & DEVELOPER',
+      tech: 'FIGMA, THREE.JS, REACT',
+      description: 'Bridging the gap between 3D product visuals and high-performance React frontends. I focused on the "User Flow" of purchasing luxury goods and delivered a finished, polished implementation that reflects the premium soul of the brand.'
+    }
+  ];
+
+  return (
+    <section id="projects" className="projects-section">
+      <div className="container">
+        <div className="projects-grid">
+          {projectList.map((project) => (
+            <ProjectItem key={project.id} {...project} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;

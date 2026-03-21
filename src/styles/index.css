@@ -1,0 +1,83 @@
+@import './variables.css';
+
+:root {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  display: block; /* Vertical standard */
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal jitter */
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: var(--fz-huge);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--fz-xl);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: var(--fz-lg);
+  font-weight: 500;
+}
+
+p {
+  font-size: var(--fz-base);
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 60ch;
+}
+
+/* Base Layout Container */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger reveals */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+@media (max-width: 1024px) {
+  .container { max-width: 100%; }
+}

@@ -1,0 +1,79 @@
+:root {
+  /* Colors - Industrial Premium Palette */
+  --bg-primary: #0A0A0B;
+  --bg-secondary: #121214;
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  
+  --text-primary: #F2F2F2;
+  --text-secondary: #8E8E93;
+  --text-muted: #636366;
+  
+  --chrome-silver: #B0B0B5;
+  --chrome-glow: rgba(176, 176, 181, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Spacing Scale - Extreme Air */
+  --space-unit: 8px;
+  --space-xs: calc(var(--space-unit) * 1); /* 8px */
+  --space-sm: calc(var(--space-unit) * 2); /* 16px */
+  --space-md: calc(var(--space-unit) * 4); /* 32px */
+  --space-lg: calc(var(--space-unit) * 8); /* 64px */
+  --space-xl: calc(var(--space-unit) * 12); /* 96px */
+  --space-huge: calc(var(--space-unit) * 20); /* 160px */
+
+  /* Synchronized Padding Strategy */
+  --container-padding: var(--space-xl);
+
+  /* Typography Hierarchy */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --fz-xs: 0.75rem;   /* 12px */
+  --fz-sm: 0.875rem;  /* 14px */
+  --fz-base: 1rem;    /* 16px */
+  --fz-md: 1.25rem;   /* 20px */
+  --fz-lg: 2rem;      /* 32px */
+  --fz-xl: 3.5rem;    /* 56px */
+  --fz-huge: 5rem;    /* 80px */
+
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+/* Responsive Overrides for Container and Hierarchy */
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: var(--space-lg);
+    --fz-xl: 3rem;
+    --fz-huge: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: var(--space-md);
+    --fz-xl: 2.5rem;
+    --fz-huge: 3rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}

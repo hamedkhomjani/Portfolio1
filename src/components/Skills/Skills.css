@@ -1,0 +1,118 @@
+.skills-section {
+  padding-top: var(--space-huge);
+  padding-bottom: var(--space-huge);
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.section-header {
+  margin-bottom: var(--space-huge);
+}
+
+.section-title {
+  font-size: var(--fz-xl);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-top: var(--space-md);
+}
+
+.section-header .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fz-xs);
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.refraction-line {
+  width: 40px;
+  height: 1px;
+  background: var(--chrome-silver);
+  opacity: 0.4;
+}
+
+/* Skills Grid (The Architect vs The Engineer) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-huge);
+  align-items: start;
+}
+
+.skill-category {
+  padding-left: var(--space-lg);
+  border-left: 1px solid var(--border-subtle);
+  transition: var(--transition-smooth);
+}
+
+.skill-category:hover {
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.cat-header {
+  margin-bottom: var(--space-lg);
+}
+
+.cat-title {
+  font-size: var(--fz-lg);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.cat-subtitle {
+  font-size: var(--fz-xs);
+  letter-spacing: 0.1em;
+  color: #B0B0B5; /* Precision Muted Silver */
+  text-transform: uppercase;
+}
+
+/* Skill List */
+.skill-list {
+  list-style: none;
+  margin-bottom: var(--space-xl);
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fz-base);
+  color: var(--text-secondary);
+  padding: var(--space-xs) 0;
+  font-weight: 400;
+}
+
+.skill-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--text-muted);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.cat-tools {
+  font-size: var(--fz-xs);
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tools-label {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.tools-value {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
