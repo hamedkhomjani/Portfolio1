@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/index.css';
 import Navigation from './components/Navigation/Navigation';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
