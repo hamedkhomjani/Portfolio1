@@ -94,9 +94,7 @@
   width: 30px;
   height: 24px;
   z-index: 1300;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  /* display: flex and flex-direction moved to @media for strict desk hiding */
 }
 
 .line {
@@ -119,6 +117,7 @@
 
 /* MOBILE DRAWERS: Full Screen Overlay with Glassmorphism */
 .mobile-drawer {
+  display: none; /* STRICT HIDE ON DESKTOP */
   position: fixed;
   top: 0;
   left: 0;
@@ -127,15 +126,15 @@
   background: rgba(10, 10, 11, 0.98);
   backdrop-filter: blur(20px);
   z-index: 1050;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateY(-100%); /* Changed to vertical entry for more drama */
+  transform: translateY(-100%);
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-drawer.active {
+  display: flex; /* manifests ONLY when active class is added */
   transform: translateY(0);
 }
 
@@ -183,6 +182,8 @@
     display: none;
   }
   .mobile-toggle {
-    display: flex; /* Force flex for the spacer logic */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
