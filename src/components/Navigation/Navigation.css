@@ -3,18 +3,14 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 96px;
-  z-index: 1100; /* Higher z-index to stay above drawer */
+  height: 80px; /* Refined consistent height */
+  z-index: 1100;
   display: flex;
   align-items: center;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.nav-sticky.is-scrolled {
-  height: 64px;
   background: rgba(10, 10, 11, 0.85);
   backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--border-subtle);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-content {
@@ -25,7 +21,8 @@
 }
 
 .nav-logo {
-  z-index: 1200; /* Logos should stay above mobile menu */
+  z-index: 1200;
+  /* Logos should stay above mobile menu */
 }
 
 .nav-logo a {
@@ -117,7 +114,8 @@
 
 /* MOBILE DRAWERS: Full Screen Overlay with Glassmorphism */
 .mobile-drawer {
-  display: none; /* STRICT HIDE ON DESKTOP */
+  display: none;
+  /* STRICT HIDE ON DESKTOP */
   position: fixed;
   top: 0;
   left: 0;
@@ -134,7 +132,8 @@
 }
 
 .mobile-drawer.active {
-  display: flex; /* manifests ONLY when active class is added */
+  display: flex;
+  /* manifests ONLY when active class is added */
   transform: translateY(0);
 }
 
@@ -181,6 +180,7 @@
   .desktop-only {
     display: none;
   }
+
   .mobile-toggle {
     display: flex;
     flex-direction: column;

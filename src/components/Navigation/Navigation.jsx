@@ -2,16 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Navigation.css';
 
 const Navigation = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Block scroll when menu is open
   useEffect(() => {
@@ -26,13 +17,12 @@ const Navigation = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className={`nav-sticky ${scrolled ? 'is-scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
+    <nav className={`nav-sticky ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container nav-content">
         <div className="nav-logo">
           <a href="#hero" onClick={closeMenu}>HK<span>.</span></a>
         </div>
-        
-        {/* Desktop Links Group */}
+
         <div className="nav-right">
           <div className="nav-links desktop-only">
             <a href="#about" className="nav-item">ABOUT</a>
@@ -40,16 +30,15 @@ const Navigation = () => {
             <a href="#skills" className="nav-item">SKILLS</a>
             <a href="#contact" className="nav-item">CONTACT</a>
           </div>
-          
+
           <div className="nav-cta desktop-only">
             <a href="mailto:hello@hamedkhomjani.com" className="btn-nav">
               HIRE
             </a>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="mobile-toggle" 
+          <button
+            className="mobile-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Menu"
           >
@@ -59,7 +48,6 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <div className={`mobile-drawer ${isMenuOpen ? 'active' : ''}`}>
         <div className="mobile-links">
           <a href="#about" className="mobile-item" onClick={closeMenu}>ABOUT</a>
