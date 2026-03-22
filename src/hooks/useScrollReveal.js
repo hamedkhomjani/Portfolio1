@@ -5,8 +5,8 @@ const useScrollReveal = () => {
 
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.05, /* Manifest almost immediately */
-      rootMargin: '0px'
+      threshold: 0, /* Trigger instantly upon hitting margin */
+      rootMargin: '0px 0px 150px 0px' /* Trigger 150px before entering viewport */
     };
 
     const observer = new IntersectionObserver((entries) => {

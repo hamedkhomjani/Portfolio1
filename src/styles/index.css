@@ -20,6 +20,7 @@ html, body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden; /* Prevent horizontal jitter */
+  overflow-anchor: none; /* Disable compensation for moving elements */
 }
 
 #root {
@@ -61,23 +62,20 @@ p {
   padding: 0 var(--container-padding);
 }
 
-/* Scroll Reveal Animations */
+/* Scroll Manifest - Natural, High-Performance */
 .reveal {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform; /* Hardware Acceleration */
+  opacity: 1; /* Always visible to prevent scroll hitch */
+  transform: none;
 }
 
 .reveal.is-revealed {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* Stagger reveals */
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
+/* Simplified Nav Blur for Scroll Performance */
+.nav-sticky {
+  backdrop-filter: blur(8px); /* Reduced from 20px */
+}
 
 @media (max-width: 1024px) {
   .container { max-width: 100%; }

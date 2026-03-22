@@ -3,14 +3,15 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 80px; /* Refined consistent height */
+  height: 80px;
   z-index: 1100;
   display: flex;
   align-items: center;
   background: rgba(10, 10, 11, 0.85);
-  backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(160%);
   border-bottom: 1px solid var(--border-subtle);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background 0.4s ease, border-color 0.4s ease;
+  will-change: background;
 }
 
 .nav-content {
