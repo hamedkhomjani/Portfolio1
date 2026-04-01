@@ -37,15 +37,6 @@ const Projects = () => {
     },
     {
       id: '04',
-      variant: 'asymmetrical-left',
-      title: 'Immersive Product Experience',
-      subtitle: 'E-commerce Redefinition',
-      role: 'UI DESIGNER & DEVELOPER',
-      tech: 'FIGMA, THREE.JS, REACT',
-      description: 'Bridging the gap between 3D product visuals and high-performance React frontends. I focused on the "User Flow" of purchasing luxury goods and delivered a finished, polished implementation that reflects the premium soul of the brand.'
-    },
-    {
-      id: '05',
       variant: 'immersive',
       title: 'QRQuick — QR Scanner & Generator',
       subtitle: 'UX/UI Designer with Frontend Development Skills',
