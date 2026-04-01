@@ -18,11 +18,13 @@ const Projects = () => {
     {
       id: '02',
       variant: 'asymmetrical-left',
-      title: 'Precision-Engineered Dashboard',
-      subtitle: 'UX/UI Design & Frontend Implementation',
-      role: 'LEAD UX/UI DESIGNER',
-      tech: 'FIGMA, REACT, SCSS',
-      description: 'A study in solving complex data visualization problems for a premium automotive brand. The goal was to simplify a multi-layer information architecture into a single High-Fidelity experience that maintains 100% design integrity through a React implementation.'
+      title: 'NordicRoll',
+      subtitle: 'Personal Project Focused on UX & Dynamics',
+      role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+      tech: 'VANILLA JAVASCRIPT, HTML, CSS',
+      link: 'https://hamedkhomjani.github.io/Kvittorullar/index.html',
+      image: 'NOrdicRoll.png',
+      description: 'Focus on interactive UI and dynamic content management. Practice responsive layout and user-friendly interactions. Use vanilla JavaScript for frontend logic. Emphasize clean UX and design-driven approach.'
     }, 
     {
       id: '03',
