@@ -7,7 +7,7 @@
   z-index: 1100;
   display: flex;
   align-items: center;
-  background: rgba(10, 10, 11, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px) saturate(160%);
   border-bottom: 1px solid var(--border-subtle);
   transition: background 0.4s ease, border-color 0.4s ease;
@@ -122,7 +122,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(10, 10, 11, 0.98);
+  background: var(--drawer-bg);
   backdrop-filter: blur(20px);
   z-index: 1050;
   flex-direction: column;

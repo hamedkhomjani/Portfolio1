@@ -11,6 +11,8 @@
   --chrome-silver: #B0B0B5;
   --chrome-glow: rgba(176, 176, 181, 0.15);
   --border-subtle: rgba(255, 255, 255, 0.08);
+  --nav-bg: rgba(10, 10, 11, 0.85);
+  --drawer-bg: rgba(10, 10, 11, 0.98);
 
   /* Spacing Scale - Extreme Air */
   --space-unit: 8px;
@@ -52,6 +54,8 @@
   --chrome-silver: #4A4A4D;
   --chrome-glow: rgba(74, 74, 77, 0.15);
   --border-subtle: rgba(0, 0, 0, 0.08);
+  --nav-bg: rgba(247, 247, 249, 0.85);
+  --drawer-bg: rgba(247, 247, 249, 0.98);
 }
 
 /* Responsive Overrides for Container and Hierarchy */
