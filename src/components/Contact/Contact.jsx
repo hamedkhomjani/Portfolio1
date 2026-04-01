@@ -25,9 +25,9 @@ const Contact = () => {
         <div className="social-links">
           <a href="#" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
           <span className="dot"></span>
-          <a href="#" target="_blank" rel="noopener noreferrer">GITHUB</a>
+          <a href="https://github.com/hamedkhomjani" target="_blank" rel="noopener noreferrer">GITHUB</a>
           <span className="dot"></span>
-          <a href="#" target="_blank" rel="noopener noreferrer">DRIBBBLE</a>
+          <a href="https://www.behance.net/hamedkhomjanidesign" target="_blank" rel="noopener noreferrer">BEHANCE</a>
         </div>
       </div>
       
