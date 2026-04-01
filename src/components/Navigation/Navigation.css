@@ -188,3 +188,37 @@
     justify-content: space-between;
   }
 }
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle-mobile {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle-mobile:hover {
+  color: var(--text-primary);
+  letter-spacing: 0.12em;
+}
