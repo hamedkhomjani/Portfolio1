@@ -6,16 +6,16 @@ const Projects = () => {
   const projectList = [
     {
       id: '01',
-      variant: 'immersive', // Full Width Hero Style
+      variant: 'immersive',
       title: 'Precision-Engineered Dashboard',
       subtitle: 'UX/UI Design & Frontend Implementation',
       role: 'LEAD UX/UI DESIGNER',
       tech: 'FIGMA, REACT, SCSS',
       description: 'A study in solving complex data visualization problems for a premium automotive brand. The goal was to simplify a multi-layer information architecture into a single High-Fidelity experience that maintains 100% design integrity through a React implementation.'
-    }, // More projects will have similar structure
+    }, 
     {
       id: '02',
-      variant: 'asymmetrical-left', // Media Left, Text Right
+      variant: 'asymmetrical-left',
       title: 'Structural Design System',
       subtitle: 'Architecting Scalability & Consistency',
       role: 'DESIGN SYSTEMS LEAD',
@@ -24,12 +24,23 @@ const Projects = () => {
     },
     {
       id: '03',
-      variant: 'asymmetrical-right', // Text Left, Media Right
+      variant: 'asymmetrical-right',
       title: 'Immersive Product Experience',
       subtitle: 'E-commerce Redefinition',
       role: 'UI DESIGNER & DEVELOPER',
       tech: 'FIGMA, THREE.JS, REACT',
       description: 'Bridging the gap between 3D product visuals and high-performance React frontends. I focused on the "User Flow" of purchasing luxury goods and delivered a finished, polished implementation that reflects the premium soul of the brand.'
+    },
+    {
+      id: '04',
+      variant: 'immersive',
+      title: 'QRQuick — QR Scanner & Generator',
+      subtitle: 'UX/UI Designer with Frontend Development Skills',
+      role: 'UX/UI DESIGNER & DEVELOPER',
+      tech: 'REACT, JAVASCRIPT, CSS',
+      link: 'https://hamedkhomjani.github.io/qrquick/',
+      image: 'qrquick.png',
+      description: 'Problem: Cluttered interfaces. User Need: Seamless physical-to-digital bridge. Solution: Premium minimalist UX. Implementation: High-performance React frontend.'
     }
   ];
 

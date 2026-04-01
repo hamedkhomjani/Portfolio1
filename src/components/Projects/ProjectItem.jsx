@@ -1,7 +1,7 @@
 import React from 'react';
 import './Projects.css';
 
-const ProjectItem = ({ id, title, subtitle, role, tech, description, variant }) => {
+const ProjectItem = ({ id, title, subtitle, role, tech, description, variant, link, image }) => {
   return (
     <div className={`project-item ${variant}`}>
       <div className="project-meta">
@@ -17,10 +17,13 @@ const ProjectItem = ({ id, title, subtitle, role, tech, description, variant }) 
       
       <div className="project-layout">
         <div className="project-media">
-          <div className="media-placeholder">
-            {/* Visual content goes here */}
-            <span className="media-overlay">HIGH-FIDELITY CASE STUDY</span>
-          </div>
+          {image ? (
+            <img src={image} alt={title} className="project-image" />
+          ) : (
+            <div className="media-placeholder">
+              <span className="media-overlay">HIGH-FIDELITY CASE STUDY</span>
+            </div>
+          )}
         </div>
         
         <div className="project-content">
@@ -31,8 +34,8 @@ const ProjectItem = ({ id, title, subtitle, role, tech, description, variant }) 
             <p>{description}</p>
           </div>
           
-          <a href={`/project/${id}`} className="project-link">
-            Explore Study <span>→</span>
+          <a href={link || `/project/${id}`} className="project-link" target={link ? "_blank" : "_self"} rel={link ? "noopener noreferrer" : ""}>
+            {link ? "View Live Project" : "Explore Study"} <span>→</span>
           </a>
         </div>
       </div>

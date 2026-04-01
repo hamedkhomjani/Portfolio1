@@ -99,6 +99,13 @@
   opacity: 0.5;
 }
 
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* Content Container */
 .project-content {
   grid-column: span 12;
