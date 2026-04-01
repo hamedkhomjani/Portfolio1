@@ -29,11 +29,13 @@ const Projects = () => {
     {
       id: '03',
       variant: 'asymmetrical-right',
-      title: 'Structural Design System',
-      subtitle: 'Architecting Scalability & Consistency',
-      role: 'DESIGN SYSTEMS LEAD',
-      tech: 'FIGMA, STORYBOOK, REACT',
-      description: 'Building a modular components library from the ground up, focusing on precision, accessibility, and designer-developer handoff. I designed the entire visual language and implementation logic to ensure a unified user experience.'
+      title: 'SkillCore',
+      subtitle: 'Mobile repair price comparison platform in Sweden',
+      role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+      tech: 'DJANGO, HTML, TAILWIND CSS, FLUENT UI, JS',
+      link: 'https://hamedkhomjani.github.io/skillcore/',
+      image: 'skilCore_portfolio.png',
+      description: 'Search & compare mobile repair services by device model. Featuring verified shops and user reviews for trustworthy information, alongside a vendor dashboard for price management. High focus on UX/UI design first.'
     },
     {
       id: '04',
