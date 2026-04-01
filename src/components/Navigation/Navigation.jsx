@@ -32,7 +32,7 @@ const Navigation = () => {
           </div>
 
           <div className="nav-cta desktop-only">
-            <a href="mailto:hello@hamedkhomjani.com" className="btn-nav">
+            <a href="mailto:eng.h.khomjani@gmail.com" className="btn-nav">
               HIRE
             </a>
           </div>
@@ -54,7 +54,7 @@ const Navigation = () => {
           <a href="#projects" className="mobile-item" onClick={closeMenu}>PROJECTS</a>
           <a href="#skills" className="mobile-item" onClick={closeMenu}>SKILLS</a>
           <a href="#contact" className="mobile-item" onClick={closeMenu}>CONTACT</a>
-          <a href="mailto:hello@hamedkhomjani.com" className="mobile-item cta" onClick={closeMenu}>HIRE ME</a>
+          <a href="mailto:eng.h.khomjani@gmail.com" className="mobile-item cta" onClick={closeMenu}>HIRE ME</a>
         </div>
       </div>
     </nav>
