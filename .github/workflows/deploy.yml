@@ -1,0 +1,35 @@
+# GitHub Pages deployment automation for Vite
+name: Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - main # Run this when pushing to the main branch
+
+permissions:
+  contents: write # To allow pushing to the gh-pages branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # The branch the action should deploy to
+          folder: dist # The folder the action should deploy
