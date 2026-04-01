@@ -1,31 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import useTheme from '../../hooks/useTheme';
 import './Contact.css';
 
 const Contact = () => {
-  const [themeMode, setThemeMode] = useState(localStorage.getItem('theme-mode') || 'system');
-
-  useEffect(() => {
-    localStorage.setItem('theme-mode', themeMode);
-    
-    if (themeMode === 'system') {
-      const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.setAttribute('data-theme', isSystemDark ? 'dark' : 'light');
-    } else {
-      document.documentElement.setAttribute('data-theme', themeMode);
-    }
-  }, [themeMode]);
-
-  // Listener for system preference changes when in 'system' mode
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e) => {
-      if (themeMode === 'system') {
-        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-      }
-    };
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [themeMode]);
+  const [themeMode, setThemeMode] = useTheme();
 
   return (
     <section id="contact" className="contact-section container">
