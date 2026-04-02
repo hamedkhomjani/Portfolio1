@@ -79,7 +79,7 @@ const Contact = () => {
           </button>
         </div>
 
-        <p>DESIGNED & ENGINEERED WITH PRECISION.</p>
+        <p>DESIGNED & ENGINEERED WITH PRECISION. // V1.0</p>
       </footer>
     </section>
   );
