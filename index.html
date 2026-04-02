@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hamed Khomjani | UX/UI Designer</title>
     <meta name="description" content="Portfolio of Hamed Khomjani, a UX/UI Designer with Frontend Development Skills. Focused on architectural precision and human-centered design." />
+    <script>
+      (function() {
+        try {
+          var mode = localStorage.getItem('theme-mode') || 'system';
+          var theme = mode;
+          if (mode === 'system') {
+            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
