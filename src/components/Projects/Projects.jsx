@@ -47,6 +47,17 @@ const Projects = () => {
       link: 'https://hamedkhomjani.github.io/qrquick/',
       image: 'qrquick.png',
       description: 'Problem: Cluttered interfaces. User Need: Seamless physical-to-digital bridge. Solution: Premium minimalist UX. Implementation: High-performance React frontend.'
+    },
+    {
+      id: '05',
+      variant: 'asymmetrical-left',
+      title: 'Hamed Khomjani Portfolio V1',
+      subtitle: 'Personal Brand & Design System Implementation',
+      role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+      tech: 'REACT, VITE, CUSTOM CSS-VARS',
+      link: '#',
+      image: 'portfolio_v1.png',
+      description: 'A study in "Industrial Premium" aesthetics. Built to showcase precision, minimalism, and a seamless bridge between design and code. Features a custom theme engine with zero-flicker system detection.'
     }
   ];
 
