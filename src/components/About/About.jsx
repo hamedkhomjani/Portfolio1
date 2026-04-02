@@ -17,9 +17,11 @@ const About = () => {
         {/* The Narrative (Conversational & Personal) */}
         <div className="about-content">
           <p className="narrative-main">
-            I believe that great design starts with an obsession for how people experience 
-            the world. My background in automotive design taught me that every detail 
-            must have a purpose—one that balances form, function, and emotion.
+            I believe great design starts with a deep understanding of how people 
+            interact with digital products. As a UX/UI Designer with frontend 
+            development skills, I focus on creating purposeful experiences 
+            where every detail serves usability, clarity, and performance—balancing 
+            form, function, and real-world application.
           </p>
 
           <div className="narrative-details">
