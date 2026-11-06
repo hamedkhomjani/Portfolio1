@@ -69,6 +69,17 @@ const Projects = () => {
       link: 'https://deldar.netlify.app/en/',
       image: 'deldar.png',
       description: 'A luxury editorial web experience for a premium beauty salon. Features full bilingual (LTR/RTL) architecture, dark/light theme switching, custom cursor micro-interactions, and a streamlined multi-step appointment booking engine.'
+    },
+    {
+      id: '07',
+      variant: 'immersive',
+      title: 'AquaPro — Pool Equipment & Smart Solutions',
+      subtitle: 'Bilingual E-Commerce, Comparison Engine & Interactive Calculator',
+      role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+      tech: 'REACT, SUPABASE, I18N, CSS/TAILWIND, NETLIFY',
+      link: 'https://manimirzaei.netlify.app/en/',
+      image: 'aquapro.png',
+      description: 'A modern e-commerce web platform inspired by Scandinavian minimalism. Incorporates bilingual (LTR/RTL) localization, dynamic dark/light theming, a custom pool volume calculation tool, real-time product comparison, and an interactive shopping cart.'
     }
   ];
 
