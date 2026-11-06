@@ -58,6 +58,17 @@ const Projects = () => {
       link: '#',
       image: 'portfolio_v1.png',
       description: 'A study in "Industrial Premium" aesthetics. Built to showcase precision, minimalism, and a seamless bridge between design and code. Features a custom theme engine with zero-flicker system detection.'
+    },
+    {
+      id: '06',
+      variant: 'asymmetrical-right',
+      title: 'Deldar Beauty — Luxury Salon & Booking',
+      subtitle: 'Bilingual Web Experience & Interactive Booking Engine',
+      role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+      tech: 'ASTRO, MODERN JS, TAILWIND CSS, NETLIFY',
+      link: 'https://deldar.netlify.app/en/',
+      image: 'deldar.png',
+      description: 'A luxury editorial web experience for a premium beauty salon. Features full bilingual (LTR/RTL) architecture, dark/light theme switching, custom cursor micro-interactions, and a streamlined multi-step appointment booking engine.'
     }
   ];
 
