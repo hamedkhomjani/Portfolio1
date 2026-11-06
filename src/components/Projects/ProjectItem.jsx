@@ -1,7 +1,9 @@
 import React from 'react';
 import './Projects.css';
 
-const ProjectItem = ({ id, title, subtitle, role, tech, description, variant, link, image, viewMode = 'detailed' }) => {
+const ProjectItem = ({ project, viewMode = 'detailed', onOpenCaseStudy }) => {
+  const { id, title, subtitle, role, tech, description, variant, link, image, caseStudy } = project;
+
   return (
     <div className={`project-item ${variant} item-${viewMode}`}>
       <div className="project-meta">
@@ -59,10 +61,29 @@ const ProjectItem = ({ id, title, subtitle, role, tech, description, variant, li
           <div className="project-narrative">
             <p>{description}</p>
           </div>
-          
-          <a href={link || `/project/${id}`} className="project-link" target={link ? "_blank" : "_self"} rel={link ? "noopener noreferrer" : ""}>
-            {link ? "View Live Project" : "Explore Study"} <span>→</span>
-          </a>
+
+          <div className="project-actions">
+            {caseStudy && (
+              <button
+                type="button"
+                className="project-link project-case-study-btn"
+                onClick={() => onOpenCaseStudy(project)}
+              >
+                Read case study <span aria-hidden="true">→</span>
+              </button>
+            )}
+
+            {link && (
+              <a
+                href={link}
+                className="project-link project-live-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View live project <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -228,6 +228,13 @@
   margin-bottom: var(--space-lg);
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
 .project-link {
   font-size: var(--fz-sm);
   font-weight: 500;
@@ -236,6 +243,19 @@
   align-items: center;
   gap: var(--space-xs);
   transition: var(--transition-smooth);
+}
+
+.project-case-study-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  text-align: left;
+  cursor: pointer;
+}
+
+.project-live-link {
+  color: var(--text-muted);
 }
 
 .project-link:hover {
@@ -442,18 +462,30 @@
   text-overflow: ellipsis;
 }
 
-.mode-grid .project-link {
+.mode-grid .project-actions {
   margin-top: auto;
   padding-top: var(--space-sm);
   border-top: 1px solid var(--border-subtle);
-  font-size: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-sm);
+}
+
+.mode-grid .project-link {
+  font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--text-primary);
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 6px;
+}
+
+.mode-grid .project-live-link {
+  color: var(--text-muted);
 }
 
 /* Light Theme Refinements for Grid Mode */
@@ -528,5 +560,234 @@
   .view-toggle-btn {
     flex: 1;
     justify-content: center;
+  }
+}
+/* ========================================================
+   CASE STUDY MODAL
+   ======================================================== */
+.case-study-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background: rgba(4, 4, 5, 0.74);
+  backdrop-filter: blur(10px);
+  animation: case-study-overlay-in 0.25s ease both;
+}
+
+.case-study-dialog {
+  position: relative;
+  display: flex;
+  width: min(900px, 100%);
+  max-height: min(88vh, 920px);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  animation: case-study-dialog-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.case-study-scroll {
+  width: 100%;
+  max-height: min(88vh, 920px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--space-xl);
+}
+
+.case-study-close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.case-study-close:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.case-study-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fz-xs);
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.case-study-title {
+  font-size: var(--fz-lg);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  padding-right: 48px;
+  margin-bottom: 6px;
+}
+
+.case-study-subtitle {
+  font-size: var(--fz-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.case-study-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.case-study-meta dt {
+  font-size: var(--fz-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.case-study-meta dd {
+  font-size: var(--fz-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.case-study-section {
+  margin-bottom: var(--space-lg);
+}
+
+.case-study-section h3 {
+  font-size: var(--fz-xs);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.case-study-section p {
+  font-size: var(--fz-base);
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.case-study-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  padding: 0;
+}
+
+.case-study-list li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.case-study-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 12px;
+  height: 1px;
+  background: var(--chrome-silver);
+}
+
+.case-study-live {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+  padding: 12px 22px;
+  font-size: var(--fz-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+
+.case-study-live:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+@keyframes case-study-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes case-study-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+[data-theme='light'] .case-study-overlay {
+  background: rgba(24, 24, 26, 0.45);
+}
+
+[data-theme='light'] .case-study-dialog {
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 640px) {
+  .case-study-overlay {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .case-study-dialog {
+    width: 100%;
+    max-height: 100vh;
+    border: none;
+    border-radius: 0;
+  }
+
+  .case-study-scroll {
+    max-height: 100vh;
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .case-study-meta {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-study-overlay,
+  .case-study-dialog {
+    animation: none;
   }
 }

@@ -111,6 +111,11 @@ const Hero = () => {
             Let's talk
           </a>
         </div>
+
+        <div className="hero-status">
+          <span className="hero-status-dot" aria-hidden="true"></span>
+          Available for select projects
+        </div>
       </div>
       
       {/* Whisper-thin background glow */}
