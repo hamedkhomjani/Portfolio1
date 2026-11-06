@@ -4,6 +4,8 @@ const useScrollReveal = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    const container = containerRef.current;
+
     const observerOptions = {
       threshold: 0, /* Trigger instantly upon hitting margin */
       rootMargin: '0px 0px 150px 0px' /* Trigger 150px before entering viewport */
@@ -17,16 +19,13 @@ const useScrollReveal = () => {
       });
     }, observerOptions);
 
-    if (containerRef.current) {
-      const elements = containerRef.current.querySelectorAll('.reveal');
+    if (container) {
+      const elements = container.querySelectorAll('.reveal');
       elements.forEach((el) => observer.observe(el));
     }
 
     return () => {
-      if (containerRef.current) {
-        const elements = containerRef.current.querySelectorAll('.reveal');
-        elements.forEach((el) => observer.unobserve(el));
-      }
+      observer.disconnect();
     };
   }, []);
 

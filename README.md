@@ -1,16 +1,91 @@
-# React + Vite
+# Hamed Khomjani — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for Hamed Khomjani, a UX/UI designer with frontend development skills. Built around an "Industrial Premium" visual language: near-black surfaces, chrome-silver accents, precise typography, and restrained motion.
 
-Currently, two official plugins are available:
+**Live site:** https://hamedkhomjani.github.io/Portfolio1/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- **React 19** + **Vite 8**
+- Custom CSS with design tokens (no UI framework)
+- Self-hosted Inter variable font
+- Responsive AVIF/WebP imagery generated with Sharp
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Dark, light, and system theme modes with zero-flicker initialization
+- Cursor-reactive hero background (grid + spotlight), disabled for reduced motion
+- Detailed and compact grid views for selected work, persisted in local storage
+- Accessible case-study modals (focus trap, Escape to close, scroll lock)
+- Keyboard-accessible navigation with active-section highlighting
+- Responsive layout from 320px up
+- Open Graph/Twitter metadata, JSON-LD person schema, sitemap, and robots.txt
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting started
+
+```bash
+npm install
+npm run dev      # http://localhost:5173/Portfolio1/
+```
+
+Other scripts:
+
+```bash
+npm run build    # production build to dist/
+npm run preview  # preview the production build
+npm run lint     # ESLint
+npm run images   # regenerate optimized project images
+npm run og       # regenerate the social sharing card
+```
+
+## Project structure
+
+```
+design-assets/projects/   Original PNG screenshots (not deployed)
+public/projects/          Generated AVIF + WebP derivatives
+public/fonts/             Self-hosted Inter variable font
+scripts/                  Image and OG-card generation scripts
+src/components/           Hero, About, Projects, Skills, Contact, Navigation
+src/data/projects.js      Project content and case-study copy
+src/hooks/                Theme and scroll-reveal hooks
+src/styles/               Design tokens and global styles
+```
+
+## Editing project content
+
+All project cards and case studies come from `src/data/projects.js`. Each entry includes:
+
+- `title`, `subtitle`, `role`, `tech`, `description`, `link`
+- `image` — base filename of the optimized image, without width or extension
+- `caseStudy.contributions` and `caseStudy.outcomes` — bullet lists shown in the modal
+
+## Image pipeline
+
+Source screenshots live in `design-assets/projects/` so the originals are never shipped. To add or replace an image:
+
+1. Add a PNG or JPEG to `design-assets/projects/` using a lowercase slug (for example `my-project.png`).
+2. Run `npm run images`.
+3. Set `image: 'my-project'` on the project in `src/data/projects.js`.
+
+The script produces `640`, `1024`, and `1400` pixel-wide AVIF and WebP files in `public/projects/`. The project component serves them through `<picture>` with `srcset`, so browsers download the smallest suitable file.
+
+Regenerate the Open Graph image after changing branding:
+
+```bash
+npm run og
+```
+
+## Deployment
+
+The GitHub Actions workflow in `.github/workflows/deploy.yml` builds the site and publishes `dist/` to the `gh-pages` branch on every push to `main`.
+
+`vite.config.js` sets the base path to `/Portfolio1/` for GitHub Pages and `/` when the `NETLIFY` environment variable is present, so the same codebase also deploys to Netlify.
+
+Canonical and social URLs currently point to the GitHub Pages address. Update the `canonical`, `og:url`, `og:image`, `twitter:image`, `robots.txt`, and `sitemap.xml` entries if a custom domain becomes primary.
+
+## Contact
+
+- Email: eng.h.khomjani@gmail.com
+- LinkedIn: https://www.linkedin.com/in/hamed-khomjani/
+- GitHub: https://github.com/hamedkhomjani
+- Behance: https://www.behance.net/hamedkhomjanidesign

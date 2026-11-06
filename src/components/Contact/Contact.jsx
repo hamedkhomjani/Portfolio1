@@ -2,8 +2,78 @@ import React from 'react';
 import useTheme from '../../hooks/useTheme';
 import './Contact.css';
 
+const SunIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="4.5" />
+    <line x1="12" y1="2" x2="12" y2="4" />
+    <line x1="12" y1="20" x2="12" y2="22" />
+    <line x1="4.2" y1="4.2" x2="5.6" y2="5.6" />
+    <line x1="18.4" y1="18.4" x2="19.8" y2="19.8" />
+    <line x1="2" y1="12" x2="4" y2="12" />
+    <line x1="20" y1="12" x2="22" y2="12" />
+    <line x1="4.2" y1="19.8" x2="5.6" y2="18.4" />
+    <line x1="18.4" y1="5.6" x2="19.8" y2="4.2" />
+  </svg>
+);
+
+const SystemIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <rect x="2" y="3" width="20" height="14" rx="2" />
+    <line x1="8" y1="21" x2="16" y2="21" />
+    <line x1="12" y1="17" x2="12" y2="21" />
+  </svg>
+);
+
+const MoonIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+);
+
+const ThemeIcon = ({ mode }) => {
+  if (mode === 'dark') return <MoonIcon />;
+  if (mode === 'system') return <SystemIcon />;
+  return <SunIcon />;
+};
+
+const THEME_OPTIONS = [
+  { value: 'light', label: 'Light theme' },
+  { value: 'system', label: 'System theme' },
+  { value: 'dark', label: 'Dark theme' },
+];
+
 const Contact = () => {
-  const [themeMode, setThemeMode] = useTheme();
+  const { themeMode, setThemeMode } = useTheme();
 
   return (
     <section id="contact" className="contact-section container">
@@ -35,51 +105,44 @@ const Contact = () => {
       </div>
       
       <footer className="footer-mini">
-        <p>© {new Date().getFullYear()} HAMED KHOMJANI. ALL RIGHTS RESERVED.</p>
-        
-        <div className="theme-switcher">
-          <button 
-            className={`theme-btn ${themeMode === 'light' ? 'active' : ''}`} 
-            onClick={() => setThemeMode('light')}
-            aria-label="Light Mode"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-          </button>
-          
-          <button 
-            className={`theme-btn ${themeMode === 'system' ? 'active' : ''}`} 
-            onClick={() => setThemeMode('system')}
-            aria-label="System Theme"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg>
-          </button>
-
-          <button 
-            className={`theme-btn ${themeMode === 'dark' ? 'active' : ''}`} 
-            onClick={() => setThemeMode('dark')}
-            aria-label="Dark Mode"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
+        <div className="footer-brand">
+          <a href="#hero" className="footer-monogram" aria-label="Back to top">
+            HK<span>.</span>
+          </a>
+          <p className="footer-copyright">
+            © {new Date().getFullYear()} HAMED KHOMJANI<br />
+            ALL RIGHTS RESERVED.
+          </p>
         </div>
 
-        <p>DESIGNED & ENGINEERED WITH PRECISION. // V1.0</p>
+        <div className="footer-theme">
+          <span className="footer-theme-label">THEME</span>
+          <div className="theme-switcher" role="group" aria-label="Color theme">
+            {THEME_OPTIONS.map(({ value, label }) => (
+              <button
+                key={value}
+                type="button"
+                className={`theme-btn ${themeMode === value ? 'active' : ''}`}
+                onClick={() => setThemeMode(value)}
+                aria-label={label}
+                aria-pressed={themeMode === value}
+                title={label}
+              >
+                <ThemeIcon mode={value} />
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="footer-meta">
+          <p className="footer-role">
+            UX/UI DESIGNER<br />
+            FRONTEND DEVELOPER
+          </p>
+          <a href="#hero" className="footer-top">
+            BACK TO TOP <span aria-hidden="true">↑</span>
+          </a>
+        </div>
       </footer>
     </section>
   );
