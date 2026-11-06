@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hamedkhomjani.github.io/Portfolio1/sitemap.xml
