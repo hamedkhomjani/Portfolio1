@@ -1,24 +1,30 @@
 import React from 'react';
 import './Projects.css';
 
-const ProjectItem = ({ id, title, subtitle, role, tech, description, variant, link, image }) => {
+const ProjectItem = ({ id, title, subtitle, role, tech, description, variant, link, image, viewMode = 'detailed' }) => {
   return (
-    <div className={`project-item ${variant}`}>
+    <div className={`project-item ${variant} item-${viewMode}`}>
       <div className="project-meta">
         <span className="project-number">{id}</span>
         <div className="project-specs">
-          <span className="spec-label">ROLE:</span>
-          <span className="spec-value">{role}</span>
-          <span className="spec-separator">|</span>
-          <span className="spec-label">TECH:</span>
-          <span className="spec-value">{tech}</span>
+          {viewMode === 'grid' ? (
+            <span className="grid-tech-badge" title={tech}>{tech}</span>
+          ) : (
+            <>
+              <span className="spec-label">ROLE:</span>
+              <span className="spec-value">{role}</span>
+              <span className="spec-separator">|</span>
+              <span className="spec-label">TECH:</span>
+              <span className="spec-value">{tech}</span>
+            </>
+          )}
         </div>
       </div>
       
       <div className="project-layout">
         <div className="project-media">
           {image ? (
-            <img src={image} alt={title} className="project-image" />
+            <img src={image} alt={title} className="project-image" loading="lazy" />
           ) : (
             <div className="media-placeholder">
               <span className="media-overlay">HIGH-FIDELITY CASE STUDY</span>
