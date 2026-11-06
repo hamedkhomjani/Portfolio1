@@ -1,10 +1,18 @@
 .hero {
+  --hero-grid-line: rgba(255, 255, 255, 0.045);
+  --hero-spotlight-color: rgba(176, 176, 181, 0.1);
+
   min-height: 90vh; /* Increased height for even more "Air" */
   display: flex;
   align-items: center;
   position: relative;
   padding-top: var(--space-xl);
   padding-bottom: var(--space-huge);
+}
+
+[data-theme='light'] .hero {
+  --hero-grid-line: rgba(0, 0, 0, 0.05);
+  --hero-spotlight-color: rgba(74, 74, 77, 0.09);
 }
 
 .hero-content {
@@ -105,6 +113,74 @@
   color: var(--text-primary);
 }
 
+/* ========================================================
+   Ambient Background: drifting grid + cursor spotlight
+   ======================================================== */
+.hero-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: hero-backdrop-in 1.4s ease-out 0.2s forwards;
+}
+
+@keyframes hero-backdrop-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slow-drifting technical grid, faded out at the edges */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--hero-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--hero-grid-line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: hero-grid-drift 38s linear infinite;
+  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 38%, #000 5%, transparent 72%);
+  mask-image: radial-gradient(ellipse 95% 85% at 50% 38%, #000 5%, transparent 72%);
+}
+
+@keyframes hero-grid-drift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 80px 80px, 80px 80px;
+  }
+}
+
+/* Chrome glow that trails the cursor */
+.hero-spotlight {
+  --spotlight-x: 50vw;
+  --spotlight-y: 40vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 720px;
+  height: 720px;
+  margin: -360px 0 0 -360px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, var(--hero-spotlight-color) 0%, transparent 62%);
+  filter: blur(60px);
+  opacity: 0;
+  transform: translate3d(var(--spotlight-x), var(--spotlight-y), 0);
+  transition: opacity 0.8s ease;
+  will-change: transform;
+}
+
+.hero.is-spotlight-active .hero-spotlight {
+  opacity: 1;
+}
+
 /* Whisper-thin background glow */
 .hero-glow {
   position: absolute;
@@ -118,6 +194,39 @@
   pointer-events: none;
   z-index: 1;
   opacity: 0.2;
+  animation: hero-glow-drift 20s ease-in-out infinite alternate;
+}
+
+@keyframes hero-glow-drift {
+  0% {
+    transform: translate(-30%, -50%) scale(1);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translate(-24%, -54%) scale(1.08);
+    opacity: 0.26;
+  }
+  100% {
+    transform: translate(-34%, -46%) scale(0.98);
+    opacity: 0.2;
+  }
+}
+
+/* Reduced motion: keep the atmosphere, drop the movement */
+@media (prefers-reduced-motion: reduce) {
+  .hero-backdrop {
+    opacity: 1;
+    animation: none;
+  }
+
+  .hero-grid,
+  .hero-glow {
+    animation: none;
+  }
+
+  .hero-spotlight {
+    display: none;
+  }
 }
 
 @media (max-width: 1024px) {
