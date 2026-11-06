@@ -12,9 +12,11 @@ function App() {
 
   return (
     <div className="app-root" ref={containerRef}>
+      <a href="#main" className="skip-link">Skip to content</a>
+
       <Navigation />
       
-      <main className="main-content">
+      <main id="main" className="main-content">
         <Hero />
 
         {/* Philosophy & Purpose - Reveal Enabled */}

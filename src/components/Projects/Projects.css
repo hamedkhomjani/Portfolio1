@@ -184,6 +184,12 @@
   opacity: 0.5;
 }
 
+.project-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .project-image {
   width: 100%;
   height: 100%;

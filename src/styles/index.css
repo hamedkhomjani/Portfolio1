@@ -1,5 +1,13 @@
 @import './variables.css';
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   font-family: var(--font-main);
   background-color: var(--bg-primary);
@@ -79,4 +87,35 @@ p {
 
 @media (max-width: 1024px) {
   .container { max-width: 100%; }
+}
+
+/* Keyboard focus: always visible, never in the way of mouse users */
+:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip link for keyboard and screen-reader users */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: var(--space-md);
+  z-index: 2000;
+  padding: 12px 20px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-size: var(--fz-sm);
+  font-weight: 600;
+  border-radius: 4px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+}
+
+/* Keep anchored sections clear of the fixed navigation */
+section[id] {
+  scroll-margin-top: 96px;
 }

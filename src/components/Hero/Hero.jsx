@@ -78,7 +78,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="hero container" ref={heroRef}>
+    <section id="hero" className="hero container" ref={heroRef}>
       {/* Ambient background: drifting grid + cursor spotlight */}
       <div className="hero-backdrop" aria-hidden="true">
         <div className="hero-grid"></div>

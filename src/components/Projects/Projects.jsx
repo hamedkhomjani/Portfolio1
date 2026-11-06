@@ -29,7 +29,7 @@ const Projects = () => {
       role: 'UX/UI DESIGNER & FRONTEND CONTRIBUTOR',
       tech: 'QUASAR FRAMEWORK (VUE.JS), JAVASCRIPT',
       link: 'https://softpos.purspot.com/pos/shop',
-      image: 'softpos_kassa_port.png',
+      image: 'softpos-kassa',
       description: 'Focused on real-world, high-pressure retail environments. Improved checkout speed and efficiency. Reduced user errors and friction. Contributed to frontend implementation using Quasar Framework (Vue.js).'
     },
     {
@@ -40,7 +40,7 @@ const Projects = () => {
       role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
       tech: 'VANILLA JAVASCRIPT, HTML, CSS',
       link: 'https://hamedkhomjani.github.io/Kvittorullar/index.html',
-      image: 'NOrdicRoll.png',
+      image: 'nordicroll',
       description: 'Focus on interactive UI and dynamic content management. Practice responsive layout and user-friendly interactions. Use vanilla JavaScript for frontend logic. Emphasize clean UX and design-driven approach.'
     }, 
     {
@@ -51,7 +51,7 @@ const Projects = () => {
       role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
       tech: 'DJANGO, HTML, TAILWIND CSS, FLUENT UI, JS',
       link: 'https://hamedkhomjani.github.io/skillcore/',
-      image: 'skilCore_portfolio.png',
+      image: 'skillcore',
       description: 'Search & compare mobile repair services by device model. Featuring verified shops and user reviews for trustworthy information, alongside a vendor dashboard for price management. High focus on UX/UI design first.'
     },
     {
@@ -62,7 +62,7 @@ const Projects = () => {
       role: 'UX/UI DESIGNER & DEVELOPER',
       tech: 'REACT, JAVASCRIPT, CSS',
       link: 'https://hamedkhomjani.github.io/qrquick/',
-      image: 'qrquick.png',
+      image: 'qrquick',
       description: 'Problem: Cluttered interfaces. User Need: Seamless physical-to-digital bridge. Solution: Premium minimalist UX. Implementation: High-performance React frontend.'
     },
     {
@@ -72,8 +72,8 @@ const Projects = () => {
       subtitle: 'Personal Brand & Design System Implementation',
       role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
       tech: 'REACT, VITE, CUSTOM CSS-VARS',
-      link: '#',
-      image: 'portfolio_v1.png',
+      link: 'https://hamedkhomjani.github.io/Portfolio1/',
+      image: 'portfolio-v1',
       description: 'A study in "Industrial Premium" aesthetics. Built to showcase precision, minimalism, and a seamless bridge between design and code. Features a custom theme engine with zero-flicker system detection.'
     },
     {
@@ -84,7 +84,7 @@ const Projects = () => {
       role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
       tech: 'ASTRO, MODERN JS, TAILWIND CSS, NETLIFY',
       link: 'https://deldar.netlify.app/en/',
-      image: 'deldar.png',
+      image: 'deldar',
       description: 'A luxury editorial web experience for a premium beauty salon. Features full bilingual (LTR/RTL) architecture, dark/light theme switching, custom cursor micro-interactions, and a streamlined multi-step appointment booking engine.'
     },
     {
@@ -95,7 +95,7 @@ const Projects = () => {
       role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
       tech: 'REACT, SUPABASE, I18N, CSS/TAILWIND, NETLIFY',
       link: 'https://manimirzaei.netlify.app/en/',
-      image: 'aquapro.png',
+      image: 'aquapro',
       description: 'A modern e-commerce web platform inspired by Scandinavian minimalism. Incorporates bilingual (LTR/RTL) localization, dynamic dark/light theming, a custom pool volume calculation tool, real-time product comparison, and an interactive shopping cart.'
     }
   ];

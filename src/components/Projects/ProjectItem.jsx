@@ -24,7 +24,27 @@ const ProjectItem = ({ id, title, subtitle, role, tech, description, variant, li
       <div className="project-layout">
         <div className="project-media">
           {image ? (
-            <img src={image} alt={title} className="project-image" loading="lazy" />
+            <picture>
+              <source
+                type="image/avif"
+                sizes="(max-width: 900px) 100vw, 800px"
+                srcSet={`projects/${image}-640.avif 640w, projects/${image}-1024.avif 1024w, projects/${image}-1400.avif 1400w`}
+              />
+              <source
+                type="image/webp"
+                sizes="(max-width: 900px) 100vw, 800px"
+                srcSet={`projects/${image}-640.webp 640w, projects/${image}-1024.webp 1024w, projects/${image}-1400.webp 1400w`}
+              />
+              <img
+                src={`projects/${image}-1024.webp`}
+                alt={title}
+                className="project-image"
+                width="1400"
+                height="788"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           ) : (
             <div className="media-placeholder">
               <span className="media-overlay">HIGH-FIDELITY CASE STUDY</span>
