@@ -39,10 +39,19 @@ const CaseStudyModal = ({ project, onClose }) => {
       }
     };
 
+    // Keep focus inside the dialog even if something behind it is clicked
+    const handleFocusIn = (event) => {
+      if (dialogRef.current && !dialogRef.current.contains(event.target)) {
+        closeRef.current?.focus();
+      }
+    };
+
     document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('focusin', handleFocusIn);
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('focusin', handleFocusIn);
       document.body.style.overflow = previousOverflow;
       if (previouslyFocused instanceof HTMLElement) {
         previouslyFocused.focus();

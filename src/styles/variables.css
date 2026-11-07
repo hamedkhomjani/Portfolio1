@@ -8,7 +8,8 @@
   
   --text-primary: #F2F2F2;
   --text-secondary: #8E8E93;
-  --text-muted: #636366;
+  --text-muted: #828287; /* 4.89:1 on --bg-secondary, 5.18:1 on --bg-primary */
+  --text-faint: #66666B; /* Large decorative text only (3:1 minimum) */
   
   --chrome-silver: #B0B0B5;
   --chrome-glow: rgba(176, 176, 181, 0.15);
@@ -53,7 +54,8 @@
   
   --text-primary: #1C1C1E;
   --text-secondary: #636366;
-  --text-muted: #8E8E93;
+  --text-muted: #6E6E73; /* 4.74:1 on --bg-primary, 5.07:1 on white */
+  --text-faint: #86868B; /* Large decorative text only (3:1 minimum) */
   
   --chrome-silver: #4A4A4D;
   --chrome-glow: rgba(74, 74, 77, 0.15);

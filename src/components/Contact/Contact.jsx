@@ -106,7 +106,7 @@ const Contact = () => {
       
       <footer className="footer-mini">
         <div className="footer-brand">
-          <a href="#hero" className="footer-monogram" aria-label="Back to top">
+          <a href="#hero" className="footer-monogram" aria-label="HK. Back to top">
             HK<span>.</span>
           </a>
           <p className="footer-copyright">

@@ -28,10 +28,9 @@
 }
 
 .projects-count {
-  color: var(--chrome-silver);
+  color: var(--text-muted);
   font-size: var(--fz-xs);
   letter-spacing: 0.1em;
-  opacity: 0.6;
 }
 
 .projects-section-title {
@@ -115,8 +114,7 @@
 .project-number {
   font-size: var(--fz-xl);
   font-weight: 300;
-  color: var(--text-muted);
-  opacity: 0.3;
+  color: var(--text-faint);
   line-height: 1;
 }
 
@@ -181,7 +179,6 @@
   letter-spacing: 0.2em;
   color: var(--text-muted);
   font-weight: 500;
-  opacity: 0.5;
 }
 
 .project-media picture {
@@ -789,5 +786,17 @@
   .case-study-overlay,
   .case-study-dialog {
     animation: none;
+  }
+
+  .project-media,
+  .project-image,
+  .project-link,
+  .view-toggle-btn {
+    transition: none;
+  }
+
+  .mode-detailed .project-media:hover,
+  .mode-grid .project-item:hover .project-image {
+    transform: none;
   }
 }

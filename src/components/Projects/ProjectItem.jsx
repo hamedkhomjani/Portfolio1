@@ -41,8 +41,8 @@ const ProjectItem = ({ project, viewMode = 'detailed', onOpenCaseStudy }) => {
                 src={`projects/${image}-1024.webp`}
                 alt={title}
                 className="project-image"
-                width="1400"
-                height="788"
+                width="1280"
+                height="720"
                 loading="lazy"
                 decoding="async"
               />

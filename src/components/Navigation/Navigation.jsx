@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import useTheme from '../../hooks/useTheme';
 import './Navigation.css';
 
@@ -79,15 +79,71 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const { themeMode, setThemeMode } = useTheme();
+  const drawerRef = useRef(null);
 
-  // Block scroll when menu is open
+  // Block scroll, trap focus, and support Escape while the mobile menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+    if (!isMenuOpen) {
+      document.body.style.overflow = '';
+      return undefined;
     }
+
+    const previouslyFocused = document.activeElement;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setIsMenuOpen(false);
+        return;
+      }
+
+      if (event.key !== 'Tab' || !drawerRef.current) return;
+
+      const focusable = Array.from(
+        drawerRef.current.querySelectorAll('a[href], button:not([disabled])')
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    const focusFrame = requestAnimationFrame(() => {
+      drawerRef.current?.querySelector('a[href]')?.focus();
+    });
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      cancelAnimationFrame(focusFrame);
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+
+      if (previouslyFocused instanceof HTMLElement && previouslyFocused !== document.body) {
+        previouslyFocused.focus();
+      }
+    };
   }, [isMenuOpen]);
+
+  // Close the drawer if the viewport grows past the mobile breakpoint
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 901px)');
+    const handleBreakpointChange = () => {
+      if (desktop.matches) setIsMenuOpen(false);
+    };
+
+    desktop.addEventListener('change', handleBreakpointChange);
+    return () => desktop.removeEventListener('change', handleBreakpointChange);
+  }, []);
 
   // Track the section currently in view for nav highlighting
   useEffect(() => {
@@ -198,7 +254,11 @@ const Navigation = () => {
         </div>
       </div>
 
-      <div id="mobile-menu" className={`mobile-drawer ${isMenuOpen ? 'active' : ''}`}>
+      <div
+        id="mobile-menu"
+        className={`mobile-drawer ${isMenuOpen ? 'active' : ''}`}
+        ref={drawerRef}
+      >
         <div className="mobile-links">
           <a
             href="#about"
