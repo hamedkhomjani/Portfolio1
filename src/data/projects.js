@@ -206,4 +206,27 @@ export const projects = [
       ],
     },
   },
+  {
+    id: '10',
+    variant: 'immersive',
+    title: 'Flopay — Bilingual POS & Payments Website',
+    subtitle: 'Swedish/English marketing site for a POS and payments platform',
+    role: 'UX/UI DESIGNER & CSS CONTRIBUTOR',
+    tech: 'ASTRO, TAILWIND CSS, JAVASCRIPT, CLOUDFLARE TURNSTILE',
+    link: 'https://flopay.se/',
+    image: 'flopay',
+    description:
+      'A bilingual Swedish/English marketing site for a POS and payments platform serving retail, restaurants, cafés, and salons. It packages hardware, software, and support into clear product bundles, then guides visitors through industries, add-on services, integrations, and a demo-booking form.',
+    caseStudy: {
+      contributions: [
+        'Designed the page system around ready-made packages, industries, and add-on services',
+        'Contributed CSS implementation across the bilingual Astro build',
+        'Shaped the demo-booking and contact flows around a clear path to sales',
+      ],
+      outcomes: [
+        'A consistent experience across Swedish and English, from packages to demo booking',
+        'Reusable sections that let the team add products and industries as the offer grows',
+      ],
+    },
+  },
 ];
