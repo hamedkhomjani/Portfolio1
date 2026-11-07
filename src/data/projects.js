@@ -160,4 +160,27 @@ export const projects = [
       ],
     },
   },
+  {
+    id: '08',
+    variant: 'asymmetrical-left',
+    title: 'TandClinic — Dental Clinic & Booking',
+    subtitle: 'Conversion-focused website for a Stockholm dental clinic',
+    role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+    tech: 'WORDPRESS, ELEMENTOR, CUSTOM CSS, CONTACT FORM 7',
+    link: 'https://tandclinic.se/',
+    image: 'tandclinic',
+    description:
+      'A modern website for a dental clinic in Stockholm, built around one clear path: booking an appointment. It brings treatments, transparent pricing, patient reviews, and the clinic team into a calm, confidence-building experience that is easy to manage in WordPress.',
+    caseStudy: {
+      contributions: [
+        'Designed the visual language and page structure around treatment discovery and booking',
+        'Built the site in WordPress with Elementor, custom CSS, and reusable content sections',
+        'Turned twelve treatments into scannable pricing tabs with consistent calls to action',
+      ],
+      outcomes: [
+        'A clear route from first visit to booked appointment across desktop and mobile',
+        'Treatments, prices, and team details stay editable in-house through WordPress',
+      ],
+    },
+  },
 ];
