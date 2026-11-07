@@ -229,4 +229,27 @@ export const projects = [
       ],
     },
   },
+  {
+    id: '11',
+    variant: 'asymmetrical-left',
+    title: 'Royal Goals — Everyday Services Website',
+    subtitle: 'Stockholm services company covering moving, cleaning, and property care',
+    role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+    tech: 'REACT, JAVASCRIPT, WEBPACK, FIREBASE, CSS',
+    link: 'https://royalgoals.se/',
+    image: 'royalgoals',
+    description:
+      'A Stockholm services company website for homes and businesses that brings moving, cleaning, tire service, car and boat care, gardening, snow removal, painting, and roadside assistance under one roof. A persistent service menu, pricing lists, opening hours, and contact details make a broad offer easy to navigate.',
+    caseStudy: {
+      contributions: [
+        'Designed a service catalogue that keeps a broad offer easy to scan',
+        'Built the React single-page frontend with reusable service and content sections',
+        'Implemented the service menu, pricing lists, and contact details',
+      ],
+      outcomes: [
+        'A complete overview of every service in one place',
+        'A reusable structure the team can extend as it adds services',
+      ],
+    },
+  },
 ];
