@@ -183,4 +183,27 @@ export const projects = [
       ],
     },
   },
+  {
+    id: '09',
+    variant: 'asymmetrical-right',
+    title: 'Purspot — Cloud POS System Website',
+    subtitle: 'Product marketing site for a Swedish restaurant POS platform',
+    role: 'UX/UI DESIGNER & CSS CONTRIBUTOR',
+    tech: 'WEBFLOW, CUSTOM CSS, JAVASCRIPT, SWIPER',
+    link: 'https://purspot.com/',
+    image: 'purspot',
+    description:
+      'A Swedish marketing site for a cloud-based POS platform built for restaurants. It presents the full product line — POS, express kiosk, QR table ordering, online ordering, and accessories — alongside payment solutions, industry use cases, customer references, and a lead-generation form.',
+    caseStudy: {
+      contributions: [
+        'Designed the site architecture and visual system around the product range and restaurant use cases',
+        'Helped implement and refine the CSS within the Webflow build',
+        'Structured product navigation, industry pages, and the lead-generation form',
+      ],
+      outcomes: [
+        'A scalable marketing site the team can extend as the product line grows',
+        'One clear path from product discovery to contacting sales',
+      ],
+    },
+  },
 ];
