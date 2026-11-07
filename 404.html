@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found — Hamed Khomjani</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0A0A0B" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F7F7F9" media="(prefers-color-scheme: light)" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0a0a0b;
+        --text: #f2f2f2;
+        --muted: #828287;
+        --border: rgba(255, 255, 255, 0.08);
+        --accent: #b0b0b5;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          color-scheme: light;
+          --bg: #f7f7f9;
+          --text: #1c1c1e;
+          --muted: #6e6e73;
+          --border: rgba(0, 0, 0, 0.08);
+          --accent: #4a4a4d;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main {
+        max-width: 640px;
+        width: 100%;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .eyebrow::before {
+        content: '';
+        width: 40px;
+        height: 1px;
+        background: var(--accent);
+        opacity: 0.6;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: 500;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0 0 40px;
+        max-width: 46ch;
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--muted);
+      }
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 28px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: border-color 0.2s ease, background-color 0.2s ease;
+      }
+
+      a:hover,
+      a:focus-visible {
+        border-color: var(--accent);
+        background: rgba(127, 127, 127, 0.08);
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--text);
+        outline-offset: 3px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        a {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="eyebrow">Error 404</div>
+      <h1>This page doesn’t exist.</h1>
+      <p>
+        The address may be mistyped, or the page may have moved. Head back to the
+        portfolio to keep exploring the work.
+      </p>
+      <a id="home-link" href="https://hamedkhomjani.github.io/Portfolio1/">
+        Back to portfolio <span aria-hidden="true">→</span>
+      </a>
+    </main>
+
+    <script>
+      // Support both the GitHub Pages subpath and a domain-root deployment
+      (function () {
+        var link = document.getElementById('home-link');
+        if (!link) return;
+        link.href = window.location.pathname.indexOf('/Portfolio1/') === 0 ? '/Portfolio1/' : '/';
+      })();
+    </script>
+  </body>
+</html>
