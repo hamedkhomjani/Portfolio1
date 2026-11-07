@@ -252,4 +252,27 @@ export const projects = [
       ],
     },
   },
+  {
+    id: '12',
+    variant: 'asymmetrical-right',
+    title: 'Shahnaz — Music Academy & Instrument Shop',
+    subtitle: 'Music school and instrument shop in Sollentuna',
+    role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+    tech: 'NEXT.JS, REACT, TAILWIND CSS',
+    link: 'https://shahnaz.se/se/sv/hem',
+    image: 'shahnaz',
+    description:
+      'A music academy and instrument shop in Sollentuna teaching Persian and Western instruments, percussion, and voice. The site presents the school, its teachers, instrument inventory, and a contact flow, with Swedish content and a built-in light/dark theme.',
+    caseStudy: {
+      contributions: [
+        'Designed the academy and shop experience around courses, teachers, and instruments',
+        'Built the responsive Next.js frontend with reusable content sections',
+        'Implemented the theme system, navigation, and contact flow',
+      ],
+      outcomes: [
+        'A single site for the school and its instrument shop',
+        'A consistent experience across light and dark themes',
+      ],
+    },
+  },
 ];
