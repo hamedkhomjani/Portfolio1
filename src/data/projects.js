@@ -275,4 +275,27 @@ export const projects = [
       ],
     },
   },
+  {
+    id: '13',
+    variant: 'immersive',
+    title: 'Tomas Jonsgården — Director & Screenwriter Portfolio',
+    subtitle: 'Film-first portfolio for an award-winning director and screenwriter',
+    role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+    tech: 'POLYMER, WEB COMPONENTS, JAVASCRIPT, CSS',
+    link: 'https://tomasjonsgarden.com/',
+    image: 'tomasjonsgarden',
+    description:
+      'A portfolio for director and screenwriter Tomas Jonsgården that puts the work first: commercials and narrative films lead, followed by selected projects, photography, and an about section. The full-frame black layout keeps the films at the centre while making markets and formats easy to browse.',
+    caseStudy: {
+      contributions: [
+        'Designed a film-first portfolio that puts the reel and selected work ahead of everything else',
+        'Built the responsive Polymer frontend with reusable web components',
+        'Structured the project, photography, and about sections for quick scanning',
+      ],
+      outcomes: [
+        'A single showcase for commercials, narrative work, and photography',
+        'A flexible project structure that grows with new work',
+      ],
+    },
+  },
 ];
