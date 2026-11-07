@@ -165,7 +165,7 @@ export const projects = [
     variant: 'asymmetrical-left',
     title: 'TandClinic — Dental Clinic & Booking',
     subtitle: 'Conversion-focused website for a Stockholm dental clinic',
-    role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+    role: 'WEB DESIGNER & CSS ADVISER',
     tech: 'WORDPRESS, ELEMENTOR, CUSTOM CSS, CONTACT FORM 7',
     link: 'https://tandclinic.se/',
     image: 'tandclinic',
@@ -174,7 +174,7 @@ export const projects = [
     caseStudy: {
       contributions: [
         'Designed the visual language and page structure around treatment discovery and booking',
-        'Built the site in WordPress with Elementor, custom CSS, and reusable content sections',
+        'Advised the frontend developer on CSS structure and implementation details',
         'Turned twelve treatments into scannable pricing tabs with consistent calls to action',
       ],
       outcomes: [
