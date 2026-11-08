@@ -5,7 +5,7 @@ import sharp from 'sharp';
 // Source screenshots live outside `public/` so the originals are never shipped.
 const SOURCE_DIR = path.resolve('design-assets/projects');
 const OUTPUT_DIR = path.resolve('public/projects');
-const WIDTHS = [640, 1024, 1400];
+const WIDTHS = [640, 800, 1024, 1400];
 
 const formatBytes = (bytes) => `${(bytes / 1024).toFixed(0)} KB`;
 

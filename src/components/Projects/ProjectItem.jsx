@@ -30,12 +30,12 @@ const ProjectItem = ({ project, viewMode = 'detailed', onOpenCaseStudy }) => {
               <source
                 type="image/avif"
                 sizes="(max-width: 900px) 100vw, 800px"
-                srcSet={`projects/${image}-640.avif 640w, projects/${image}-1024.avif 1024w, projects/${image}-1400.avif 1400w`}
+                srcSet={`projects/${image}-640.avif 640w, projects/${image}-800.avif 800w, projects/${image}-1024.avif 1024w, projects/${image}-1400.avif 1400w`}
               />
               <source
                 type="image/webp"
                 sizes="(max-width: 900px) 100vw, 800px"
-                srcSet={`projects/${image}-640.webp 640w, projects/${image}-1024.webp 1024w, projects/${image}-1400.webp 1400w`}
+                srcSet={`projects/${image}-640.webp 640w, projects/${image}-800.webp 800w, projects/${image}-1024.webp 1024w, projects/${image}-1400.webp 1400w`}
               />
               <img
                 src={`projects/${image}-1024.webp`}

@@ -1,0 +1,27 @@
+# Netlify caching headers. GitHub Pages ignores this file (it does not support
+# custom headers) but still serves cleanly with its own defaults.
+#
+# Vite fingerprints everything in /assets, so those files can be cached forever.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Stable filenames that can change without a hash bump: keep them reasonably
+# fresh while still avoiding repeated downloads.
+/fonts/*
+  Cache-Control: public, max-age=2592000
+
+/projects/*
+  Cache-Control: public, max-age=2592000
+
+/*.svg
+  Cache-Control: public, max-age=604800
+
+/*.png
+  Cache-Control: public, max-age=604800
+
+/*.xml
+  Cache-Control: public, max-age=3600
+
+# HTML should always be revalidated so new deployments are picked up.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

@@ -173,25 +173,35 @@
   }
 }
 
-/* Slow-drifting technical grid, faded out at the edges */
+/* Slow-drifting technical grid, faded out at the edges.
+   The pattern lives on a pseudo-element and drifts with a transform so the
+   animation runs on the compositor instead of repainting the grid each frame. */
 .hero-grid {
   position: absolute;
   inset: 0;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 38%, #000 5%, transparent 72%);
+  mask-image: radial-gradient(ellipse 95% 85% at 50% 38%, #000 5%, transparent 72%);
+}
+
+.hero-grid::before {
+  content: '';
+  position: absolute;
+  inset: -80px;
   background-image:
     linear-gradient(to right, var(--hero-grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--hero-grid-line) 1px, transparent 1px);
   background-size: 80px 80px;
   animation: hero-grid-drift 38s linear infinite;
-  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 38%, #000 5%, transparent 72%);
-  mask-image: radial-gradient(ellipse 95% 85% at 50% 38%, #000 5%, transparent 72%);
+  will-change: transform;
 }
 
 @keyframes hero-grid-drift {
   from {
-    background-position: 0 0, 0 0;
+    transform: translate3d(0, 0, 0);
   }
   to {
-    background-position: 80px 80px, 80px 80px;
+    transform: translate3d(80px, 80px, 0);
   }
 }
 
@@ -256,7 +266,7 @@
     animation: none;
   }
 
-  .hero-grid,
+  .hero-grid::before,
   .hero-glow {
     animation: none;
   }

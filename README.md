@@ -67,7 +67,7 @@ Source screenshots live in `design-assets/projects/` so the originals are never 
 2. Run `npm run images`.
 3. Set `image: 'my-project'` on the project in `src/data/projects.js`.
 
-The script produces `640`, `1024`, and `1400` pixel-wide AVIF and WebP files in `public/projects/`. The project component serves them through `<picture>` with `srcset`, so browsers download the smallest suitable file.
+The script produces `640`, `800`, `1024`, and `1400` pixel-wide AVIF and WebP files in `public/projects/`. The project component serves them through `<picture>` with `srcset`, so browsers download the smallest suitable file (for example, phones at 1.75× DPR pick the 800 px variant instead of 1024 px).
 
 Regenerate the Open Graph image after changing branding:
 
@@ -80,6 +80,10 @@ npm run og
 The GitHub Actions workflow in `.github/workflows/deploy.yml` builds the site and publishes `dist/` to the `gh-pages` branch on every push to `main`.
 
 `vite.config.js` sets the base path to `/Portfolio1/` for GitHub Pages and `/` when the `NETLIFY` environment variable is present, so the same codebase also deploys to Netlify.
+
+`public/_headers` configures long-lived caching for Netlify (one year, immutable, for the fingerprint-named `/assets` files; 30 days for fonts and project images). GitHub Pages does not support custom headers and uses a short default cache, so repeat visits there will revalidate. If GitHub Pages remains the primary host and repeat-visit speed matters, put Cloudflare in front of it or move primary hosting to Netlify.
+
+`npm run build` also runs `scripts/inline-css.mjs`, which inlines the single generated stylesheet into `index.html`. That removes a render-blocking request and lets the page paint from the first response.
 
 Canonical and social URLs currently point to the GitHub Pages address. Update the `canonical`, `og:url`, `og:image`, `twitter:image`, `robots.txt`, and `sitemap.xml` entries if a custom domain becomes primary.
 
