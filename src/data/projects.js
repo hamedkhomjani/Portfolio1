@@ -298,4 +298,27 @@ export const projects = [
       ],
     },
   },
+  {
+    id: '14',
+    variant: 'asymmetrical-left',
+    title: 'Hamideh Deldar — Haircut & Styling',
+    subtitle: 'Bilingual booking experience for a haircut and styling specialist',
+    role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+    tech: 'REACT, VITE, TAILWIND CSS, NETLIFY',
+    link: 'https://deldarhaircut.netlify.app/',
+    image: 'deldar-haircut',
+    description:
+      'A bilingual Persian/English website for hairstylist Hamideh Deldar, offering precision cuts and blow-dry styling in the studio or at home. Features an RTL-first layout, dark/light theming, an online booking flow, service packages, and an interactive before/after portfolio.',
+    caseStudy: {
+      contributions: [
+        'Designed an RTL-first bilingual experience with full Persian and English layouts',
+        'Built the online booking flow for studio and home-service appointments',
+        'Implemented the theme switcher and the interactive before/after gallery',
+      ],
+      outcomes: [
+        'A single booking destination for both studio and at-home appointments',
+        'A calm, premium brand presence that holds up across languages and themes',
+      ],
+    },
+  },
 ];
