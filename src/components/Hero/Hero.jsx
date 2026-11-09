@@ -3,6 +3,7 @@ import './Hero.css';
 
 const Hero = () => {
   const heroRef = useRef(null);
+  const backdropRef = useRef(null);
   const spotlightRef = useRef(null);
   const frameRef = useRef(0);
   const pointerRef = useRef({ x: 0, y: 0 });
@@ -10,8 +11,9 @@ const Hero = () => {
 
   useEffect(() => {
     const hero = heroRef.current;
+    const backdrop = backdropRef.current;
     const spotlight = spotlightRef.current;
-    if (!hero || !spotlight) return undefined;
+    if (!hero || !backdrop || !spotlight) return undefined;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const hasFinePointer = window.matchMedia('(pointer: fine)');
@@ -24,8 +26,8 @@ const Hero = () => {
       const rendered = renderedRef.current;
 
       // Ease toward the cursor for a soft, trailing glow
-      rendered.x += (target.x - rendered.x) * 0.12;
-      rendered.y += (target.y - rendered.y) * 0.12;
+      rendered.x += (target.x - rendered.x) * 0.2;
+      rendered.y += (target.y - rendered.y) * 0.2;
 
       spotlight.style.setProperty('--spotlight-x', `${rendered.x}px`);
       spotlight.style.setProperty('--spotlight-y', `${rendered.y}px`);
@@ -37,7 +39,9 @@ const Hero = () => {
     };
 
     const handlePointerMove = (event) => {
-      const rect = hero.getBoundingClientRect();
+      // Measure against the full-width backdrop (the spotlight's offset parent)
+      // so the glow stays under the cursor on screens wider than the hero container.
+      const rect = backdrop.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
 
@@ -80,7 +84,7 @@ const Hero = () => {
   return (
     <section id="hero" className="hero container" ref={heroRef}>
       {/* Ambient background: drifting grid + cursor spotlight */}
-      <div className="hero-backdrop" aria-hidden="true">
+      <div className="hero-backdrop" ref={backdropRef} aria-hidden="true">
         <div className="hero-grid"></div>
         <div className="hero-spotlight" ref={spotlightRef}></div>
       </div>

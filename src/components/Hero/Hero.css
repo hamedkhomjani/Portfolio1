@@ -1,6 +1,6 @@
 .hero {
-  --hero-grid-line: rgba(255, 255, 255, 0.045);
-  --hero-spotlight-color: rgba(176, 176, 181, 0.1);
+  --hero-grid-line: rgba(255, 255, 255, 0.08);
+  --hero-spotlight-color: rgba(176, 176, 181, 0.16);
 
   min-height: 90vh; /* Increased height for even more "Air" */
   display: flex;
@@ -11,8 +11,8 @@
 }
 
 [data-theme='light'] .hero {
-  --hero-grid-line: rgba(0, 0, 0, 0.05);
-  --hero-spotlight-color: rgba(74, 74, 77, 0.09);
+  --hero-grid-line: rgba(0, 0, 0, 0.08);
+  --hero-spotlight-color: rgba(74, 74, 77, 0.13);
 }
 
 .hero-content {
@@ -240,22 +240,22 @@
   filter: blur(80px);
   pointer-events: none;
   z-index: 1;
-  opacity: 0.2;
+  opacity: 0.32;
   animation: hero-glow-drift 20s ease-in-out infinite alternate;
 }
 
 @keyframes hero-glow-drift {
   0% {
     transform: translate(-30%, -50%) scale(1);
-    opacity: 0.18;
+    opacity: 0.28;
   }
   50% {
     transform: translate(-24%, -54%) scale(1.08);
-    opacity: 0.26;
+    opacity: 0.4;
   }
   100% {
     transform: translate(-34%, -46%) scale(0.98);
-    opacity: 0.2;
+    opacity: 0.32;
   }
 }
 
