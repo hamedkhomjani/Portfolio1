@@ -321,4 +321,27 @@ export const projects = [
       ],
     },
   },
+  {
+    id: '15',
+    variant: 'asymmetrical-right',
+    title: 'DropLab — Secure File Sharing',
+    subtitle: 'Multilingual file transfer service with automatic 3-day retention',
+    role: 'UX/UI DESIGNER & FRONTEND DEVELOPER',
+    tech: 'NETLIFY FUNCTIONS, NETLIFY BLOBS, NUNJUCKS, HTML, CSS, JAVASCRIPT',
+    link: 'https://droplb.netlify.app/?lang=sv',
+    image: 'droplab',
+    description:
+      'A no-registration file-sharing platform for quick, temporary transfers. Upload a file, get a shareable link, and let the recipient download it until the file is automatically deleted after three days. The service supports Swedish, English, and Persian, with light and dark themes and a responsive cyberpunk-inspired interface.',
+    caseStudy: {
+      contributions: [
+        'Designed a focused upload-and-share flow with drag-and-drop, progress feedback, and link-based downloads',
+        'Built the multilingual interface in Swedish, English, and Persian with light and dark themes',
+        'Implemented serverless uploads and temporary storage with Netlify Functions and Blobs, including automatic 3-day cleanup',
+      ],
+      outcomes: [
+        'A simple sharing flow with no account required, available across three languages',
+        'Files expire automatically after three days, keeping storage clean and privacy clear',
+      ],
+    },
+  },
 ];
