@@ -10,8 +10,7 @@
     <link rel="canonical" href="https://hamedkhomjani.github.io/Portfolio1/" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <meta name="theme-color" content="#0A0A0B" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#F7F7F9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0A0A0B" />
 
     <!-- Font: self-hosted Inter variable (latin) -->
     <link
@@ -71,6 +70,9 @@
             theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
           }
           document.documentElement.setAttribute('data-theme', theme);
+          var colors = { dark: '#0A0A0B', light: '#F7F7F9', blueprint: '#0B1220' };
+          var themeColor = document.querySelector('meta[name="theme-color"]');
+          if (themeColor && colors[theme]) themeColor.setAttribute('content', colors[theme]);
         } catch (e) {}
       })();
     </script>

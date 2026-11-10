@@ -37,6 +37,10 @@
   color: var(--chrome-silver);
 }
 
+[data-theme='blueprint'] .nav-logo span {
+  color: var(--accent-warm);
+}
+
 /* Desktop Navigation Link Group */
 .nav-right {
   display: flex;

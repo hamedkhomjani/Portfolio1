@@ -13,7 +13,7 @@ Personal portfolio for Hamed Khomjani, a UX/UI designer with frontend developmen
 
 ## Features
 
-- Dark, light, and system theme modes with zero-flicker initialization
+- Dark, light, blueprint, and system theme modes with zero-flicker initialization
 - Cursor-reactive hero background (grid + spotlight), disabled for reduced motion
 - Detailed and compact grid views for selected work, persisted in local storage
 - Accessible case-study modals (focus trap, Escape to close, scroll lock)

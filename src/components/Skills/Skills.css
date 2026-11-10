@@ -33,6 +33,11 @@
   opacity: 0.4;
 }
 
+[data-theme='blueprint'] .refraction-line {
+  background: var(--accent-warm);
+  opacity: 0.6;
+}
+
 /* Skills Grid (The Architect vs The Engineer) */
 .skills-grid {
   display: grid;
@@ -65,7 +70,7 @@
 .cat-subtitle {
   font-size: var(--fz-xs);
   letter-spacing: 0.1em;
-  color: #B0B0B5; /* Precision Muted Silver */
+  color: var(--chrome-silver); /* Precision Muted Silver */
   text-transform: uppercase;
 }
 

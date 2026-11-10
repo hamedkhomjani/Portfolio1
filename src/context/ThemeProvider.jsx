@@ -12,6 +12,12 @@ const getStoredTheme = () => {
 const getSystemTheme = () =>
   window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
+const THEME_COLORS = {
+  dark: '#0A0A0B',
+  light: '#F7F7F9',
+  blueprint: '#0B1220',
+};
+
 const ThemeProvider = ({ children }) => {
   const [themeMode, setThemeMode] = useState(getStoredTheme);
   const [resolvedTheme, setResolvedTheme] = useState(() =>
@@ -30,6 +36,12 @@ const ThemeProvider = ({ children }) => {
     const applyTheme = () => {
       const nextTheme = themeMode === 'system' ? getSystemTheme() : themeMode;
       document.documentElement.setAttribute('data-theme', nextTheme);
+
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor && THEME_COLORS[nextTheme]) {
+        themeColor.setAttribute('content', THEME_COLORS[nextTheme]);
+      }
+
       setResolvedTheme(nextTheme);
     };
 

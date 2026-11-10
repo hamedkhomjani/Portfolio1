@@ -64,6 +64,27 @@
   --drawer-bg: rgba(247, 247, 249, 0.98);
 }
 
+/* Blueprint: deep drafting-ink surfaces with cobalt lines and a warm accent */
+[data-theme='blueprint'] {
+  color-scheme: dark;
+
+  --bg-primary: #0B1220;
+  --bg-secondary: #111C30;
+  --bg-glass: rgba(127, 180, 255, 0.06);
+
+  --text-primary: #EAF1FF;
+  --text-secondary: #A7B6D1;
+  --text-muted: #8296B8; /* 6.24:1 on --bg-primary */
+  --text-faint: #5F7395; /* Large decorative text only */
+
+  --chrome-silver: #A9C6FF;
+  --chrome-glow: rgba(90, 150, 255, 0.22);
+  --accent-warm: #E8B15C;
+  --border-subtle: rgba(150, 190, 255, 0.14);
+  --nav-bg: rgba(11, 18, 32, 0.85);
+  --drawer-bg: rgba(11, 18, 32, 0.98);
+}
+
 /* Responsive Overrides for Container and Hierarchy */
 @media (max-width: 1024px) {
   :root {

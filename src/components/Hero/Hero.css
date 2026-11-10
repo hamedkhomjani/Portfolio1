@@ -15,6 +15,11 @@
   --hero-spotlight-color: rgba(74, 74, 77, 0.13);
 }
 
+[data-theme='blueprint'] .hero {
+  --hero-grid-line: rgba(127, 180, 255, 0.14);
+  --hero-spotlight-color: rgba(90, 150, 255, 0.22);
+}
+
 .hero-content {
   max-width: 960px;
   z-index: 2;
@@ -245,6 +250,10 @@
 
 [data-theme='light'] .hero-scroll:hover .hero-scroll-line {
   background: rgba(0, 0, 0, 0.22);
+}
+
+[data-theme='blueprint'] .hero-scroll:hover .hero-scroll-line {
+  background: rgba(127, 180, 255, 0.4);
 }
 
 /* ========================================================
