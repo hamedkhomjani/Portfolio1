@@ -122,6 +122,14 @@ const Hero = () => {
         </div>
       </div>
       
+      {/* Editorial Scroll Indicator */}
+      <a href="#about" className="hero-scroll" aria-label="Scroll to About section">
+        <span className="hero-scroll-text">SCROLL</span>
+        <span className="hero-scroll-line" aria-hidden="true">
+          <span className="hero-scroll-thumb"></span>
+        </span>
+      </a>
+
       {/* Whisper-thin background glow */}
       <div className="hero-glow"></div>
     </section>

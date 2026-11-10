@@ -151,6 +151,103 @@
 }
 
 /* ========================================================
+   Editorial Scroll Indicator
+   ======================================================== */
+.hero-scroll {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  z-index: 3;
+  opacity: 0;
+  animation: hero-scroll-fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+  cursor: pointer;
+  padding: 8px;
+}
+
+@keyframes hero-scroll-fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.hero-scroll-text {
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  padding-left: 0.28em; /* optical balance for letter-spacing */
+  user-select: none;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 44px;
+  background: var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition-fast);
+}
+
+.hero-scroll-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 18px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--chrome-silver) 50%,
+    var(--text-primary) 100%
+  );
+  animation: hero-scroll-drop 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes hero-scroll-drop {
+  0% {
+    transform: translate3d(0, -18px, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 44px, 0);
+    opacity: 0;
+  }
+}
+
+.hero-scroll:hover .hero-scroll-text {
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.hero-scroll:hover .hero-scroll-line {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+[data-theme='light'] .hero-scroll:hover .hero-scroll-line {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* ========================================================
    Ambient Background: drifting grid + cursor spotlight
    ======================================================== */
 .hero-backdrop {
@@ -278,6 +375,18 @@
   .hero-status-dot {
     animation: none;
   }
+
+  .hero-scroll {
+    animation: none;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  .hero-scroll-thumb {
+    animation: none;
+    transform: translateY(14px);
+    opacity: 0.8;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -302,5 +411,11 @@
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-md);
+  }
+  .hero-scroll {
+    bottom: var(--space-md);
+  }
+  .hero-scroll-line {
+    height: 36px;
   }
 }
